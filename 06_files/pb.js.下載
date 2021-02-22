@@ -1,0 +1,9 @@
+// AdserverX
+(function () {
+    if (window.googletag !== undefined) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://adx.c.appier.net/pb/0wHT9JDiP3SORJx/pb.bid?acid=4slRFf3nAUKrR76s8MZfXA&haid=Whu69301&hzids=HhCiH9Oc,HhCiHIOc,HhCiHzOc,HhCiWIOc,HhCiWFOc";
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }
+})();

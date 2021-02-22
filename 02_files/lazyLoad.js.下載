@@ -1,0 +1,94 @@
+/*
+ *
+ * from https://wordpress.org/plugins/native-lazyload/
+ *
+ */
+;(function(gee, $){
+    'use strict';
+
+    gee.lazyLoad = {
+        elems: [],
+        timer: null,
+        init: function() {
+            if (!('loading' in HTMLImageElement.prototype)) {
+                $('#main img:not(.nljfd)').each(function(){
+                    var src = $(this).attr('src');
+                    if (gee.isset(src)) {
+                        $(this).addClass('nljf').attr('data-src', src).removeAttr('src');
+                    }
+                });
+            }
+            gee.lazyLoad.elems = [].slice.call( document.querySelectorAll( '.nljf' ) );
+
+            gee.lazyLoad.timer = setInterval(function () {
+                if (gee.lazyLoad.elems.length > 0) {
+                    gee.lazyLoad.showHidedImg(gee.lazyLoad.elems[0]);
+                } else {
+                    clearInterval(gee.lazyLoad.timer);
+                }
+            }, 2500);
+        },
+        fetch: function (){
+            gee.lazyLoad.elems = [].slice.call( document.querySelectorAll( '.nljf' ) );
+        },
+        loadHidedImg: function( elem ) {
+            if ( ( elem.getBoundingClientRect().top <= window.innerHeight
+                && 0 <= elem.getBoundingClientRect().bottom )
+                && 'none' !== getComputedStyle( elem ).display ) {
+                gee.lazyLoad.showHidedImg(elem);
+            }
+        },
+        showHidedImg: function( elem ) {
+            if ( gee.isset(elem) && $(elem).data('src') ) {
+                if ($(elem).data('src').indexOf('webp?') !== -1) {
+                    if (isIE) {
+						$(elem).data('src', $(elem).data('src').replace(/\.webp\?(png|jpe?g)/i, '.$1'));
+
+                        if (elem.srcset) {
+                            elem.srcset = elem.srcset.replace(/\.webp\?(png|jpe?g)/ig, '.$1');
+                        }
+                    }
+                    if (isSafari) {
+                        if (elem.dataset.src.indexOf('webp?png') !== -1) {
+                            elem.dataset.src = elem.dataset.src.replace(/\.webp\?(png)/i, '.$1');
+
+                            if (elem.srcset) {
+                                elem.srcset = elem.srcset.replace(/\.webp\?(png)/ig, '.$1');
+                            }
+                        } else {
+                            elem.dataset.src = elem.dataset.src.replace(/\.webp\?(jpe?g)/i, '.jp2');
+                            if (elem.srcset) {
+                                elem.srcset = elem.srcset.replace(/\.webp\?(jpe?g)/ig, '.jp2');
+                            }
+                        }
+						$(elem).data('src', elem.dataset.src);
+                    }
+                }
+                if (elem.classList.contains('post-thumbnail')) {
+                    elem.style.backgroundImage = 'url(\''+ $(elem).data('src') +'\')';
+                } else {
+                    elem.src = $(elem).data('src');
+                }
+
+                if (!isIE) { delete elem.dataset.src;
+                if ( elem.dataset.srcset ) {
+                    elem.srcset = elem.dataset.srcset;
+                    delete elem.dataset.srcset;
+                }
+                if ( elem.dataset.sizes ) {
+                    elem.sizes = elem.dataset.sizes;
+                    delete elem.dataset.sizes;
+                }}
+				elem.classList.remove('nljf');
+                elem.classList.add('nljfd');
+            }
+
+            gee.lazyLoad.elems = gee.lazyLoad.elems.filter( function( element ) {
+                return element !== elem;
+            } );
+        }
+    };
+
+    gee.lazyLoad.init();
+
+}(gee, jQuery));

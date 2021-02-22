@@ -1,0 +1,75 @@
+function set_cookie(name, value) {
+    expire_days = 90;
+    var d = new Date();
+    d.setTime(d.getTime() + (expire_days * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = name+"="+encodeURIComponent(value)+"; " + expires + "; path=/; domain=.commonhealth.com.tw";
+}
+
+function get_cookie(name) {
+    var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+    if (arr != null) {
+        return unescape(decodeURIComponent(arr[2]));
+    } else {
+        return null;
+    }
+}
+
+function user_history_action() {
+    var path_name = location.pathname;
+    if (path_name.indexOf('login') !== -1 || path_name.indexOf('register') !== -1) {
+        return;
+    }
+    var title = document.title;
+    if (title == '404' || title == '找不到網頁') {
+        return;
+    }
+    var author = document.getElementById('author_name') ? document.getElementById('author_name').innerText : '';
+    var publish_date = document.getElementById('publish_time') ? document.getElementById('publish_time').innerText : '';
+    var source = document.getElementById('article_source') ? document.getElementById('article_source').innerText : '';
+
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var date_time = date + ' ' + time;
+
+    var search = location.search.split('&');
+    var query = [];
+    var include_str = /(nid|year|keyword|tab)=.+/g;
+    for (var i in search) {
+        if (search[i].match(include_str) !== null) {
+            query.push(search[i].replace('?', ''));
+        }
+    }
+    var url = decodeURIComponent(location.origin+location.pathname+(query.length > 0 ? '?' : '')+query.join('&'));
+
+    var value = {
+        url: url,
+        title: title,
+        author: author,
+        publish_date: publish_date,
+        source: source,
+        date_time: date_time,
+    };
+
+    var cookie_name = 'user_history';
+    var user_path_value = get_cookie(cookie_name);
+    if (user_path_value == null) {
+        var new_cookie_value = JSON.stringify([value]);
+        set_cookie(cookie_name, new_cookie_value);
+        return;
+    }
+    var cookie_value = JSON.parse(user_path_value);
+    if (cookie_value[cookie_value.length - 1].url == url) {
+        return;
+    }
+    cookie_value.push(value);
+    if (cookie_value.length > 2) {
+        cookie_value.splice(0, 1);
+    }
+    set_cookie(cookie_name, JSON.stringify(cookie_value));
+}
+
+$(document).ready(function () {
+    user_history_action();
+});

@@ -1,0 +1,457 @@
+;(function(gee, $){
+    'use strict';
+
+    // <div class="dfp" id="bo-both-190129-4"></div>
+
+    gee.dfp = {
+        map : {
+            'bo': {
+                'all-300x250-190129-1': {
+                    'tablet': {
+                        'slot': '/16860155/Buzz手機熱門文章上方',
+                        'w': '300',
+                        'h': '250'
+                    },
+                },
+                'all-300x250-190129-2': {
+                    'tablet': {
+                        'slot': '/16860155/BO_WEB_R2_300*250',
+                        'w': '300',
+                        'h': '250'
+                    },
+                },
+                'all-300x600-190129-3': {
+                    'tablet': {
+                        'slot': '/16860155/Buzz全站貫穿側邊欄社群分享下方',
+                        'w': '300',
+                        'h': '600'
+                    },
+                },
+                'all-both-190129-4': {
+                    'tablet': {
+                        'slot': '/16860155/Buzz_web_content_728*90_2',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/BO_mobile_content_M_300250',
+                        'w': '300',
+                        'h': '250'
+                    },
+                },
+                'all-both-190129-5': {
+                    'tablet': {
+                        'slot': '/16860155/BO_WEB_CONTENT_M2',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/BO_Mobile-Content_M2',
+                        'w': '300',
+                        'h': '250'
+                    },
+                },
+                'all-both-190129-6': {
+                    'tablet': {
+                        'slot': '/16860155/boweb10',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/bomweb04',
+                        'w': '300',
+                        'h': '250'
+                    },
+                },
+                'all-both-190129-7': {
+                    'tablet': {
+                        'slot': '/16860155/BO_contnet_M_728*90',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/Buzz手機內文作者下方',
+                        'w': '300',
+                        'h': '250'
+                    },
+                },
+                'all-970x250-190129-8': {
+                    'tablet': {
+                        'slot': '/16860155/Buzz_pc_home_970x250',
+                        'w': '780',
+                        'h': '260'
+                    },
+                },
+                'all-970x250-190129-9': {
+                    'tablet': {
+                        'slot': '/16860155/Buzz_pc_article_970x250',
+                        'w': '780',
+                        'h': '260'
+                    },
+                },
+                'all-970x250-190129-10': {
+                    'tablet': {
+                        'slot': '/16860155/popout_970*250-(BO)',
+                        'w': '970',
+                        'h': '250'
+                    },
+                },
+                'all-both-190129-21': {
+                    'tablet': {
+                        'slot': '/16860155/boweb11',
+                        'w': '780',
+                        'h': '439'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/bomweb05',
+                        'w': '345',
+                        'h': '194'
+                    },
+                }
+            },
+            'to': {
+                'all-300x250-190129-1': {
+                    'tablet': {
+                        'slot': '/16860155/Tech_m_Index_RB_300250',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-300x250-190129-2': {
+                    'tablet': {
+                        'slot': '/16860155/TO_WEB_R2_300*250',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-300x600-190129-3': {
+                    'tablet': {
+                        'slot': '/16860155/TO_mobile_content_300600',
+                        'w': '300',
+                        'h': '600'
+                    }
+                },
+                'all-both-190129-4': {
+                    'tablet': {
+                        'slot': '/16860155/TO內容頁下方728x90',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/TO_mobile_content_M_300250',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-both-190129-5': {
+                    'tablet': {
+                        'slot': '/16860155/TO_WEB_CONTENT_M2',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/TO_Mobile-Content_M2',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-both-190129-6': {
+                    'tablet': {
+                        'slot': '/16860155/toweb10',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/tomweb04',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-both-190129-7': {
+                    'tablet': {
+                        'slot': '/16860155/TO_contnet_M_728*90',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/Tech_m_content_RB_300250',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-970x250-190129-8': {
+                    'tablet': {
+                        'slot': '/16860155/Tech_pc_home_970x250',
+                        'w': '780',
+                        'h': '260'
+                    }
+                },
+                'all-970x250-190129-9': {
+                    'tablet': {
+                        'slot': '/16860155/Tech_pc_article_970x250',
+                        'w': '780',
+                        'h': '260'
+                    }
+                },
+                'all-970x250-190129-10': {
+                    'tablet': {
+                        'slot': '/16860155/popout_970*250',
+                        'w': '970',
+                        'h': '250'
+                    }
+                },
+                'all-both-190129-21': {
+                    'tablet': {
+                        'slot': '/16860155/toweb11',
+                        'w': '780',
+                        'h': '439'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/tomweb05',
+                        'w': '345',
+                        'h': '194'
+                    },
+                }
+            },
+            'vo': {
+                'all-300x250-190129-1': {
+                    'tablet': {
+                        'slot': '/16860155/vida全站貫穿側邊欄熱門文章上方300250',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-300x250-190129-2': {
+                    'tablet': {
+                        'slot': '/16860155/VO_WEB_R2_300*250',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-300x600-190129-3': {
+                    'tablet': {
+                        'slot': '/16860155/vida全站貫穿側邊欄社群分享下方300600',
+                        'w': '300',
+                        'h': '600'
+                    }
+                },
+                'all-both-190129-4': {
+                    'tablet': {
+                        'slot': '/16860155/vida_content_728*90_2',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/VO_mobile_content_M_300250',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-both-190129-5': {
+                    'tablet': {
+                        'slot': '/16860155/VO_WEB_CONTENT_M2',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/VO_Mobile-Content_M2',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-both-190129-6': {
+                    'tablet': {
+                        'slot': '/16860155/voweb10',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/vomweb04',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-both-190129-7': {
+                    'tablet': {
+                        'slot': '/16860155/vida_content_M_728*90',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/vida_m_content_RB_300250',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-970x250-190129-8': {
+                    'tablet': {
+                        'slot': '/16860155/Vida_pc_home_970x250',
+                        'w': '780',
+                        'h': '260'
+                    }
+                },
+                'all-970x250-190129-9': {
+                    'tablet': {
+                        'slot': '/16860155/Vida_pc_article_970x250',
+                        'w': '780',
+                        'h': '260'
+                    }
+                },
+                'all-970x250-190129-10': {
+                    'tablet': {
+                        'slot': '/16860155/popout_970*250_(VO)',
+                        'w': '970',
+                        'h': '250'
+                    }
+                },
+                'vo-300x250-190129-15': { // repleace 1
+                    'tablet': {
+                        'slot': '/16860155/vida_adult_300250',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'vo-300x600-190129-16': { // repleace 3
+                    'tablet': {
+                        'slot': '/16860155/vida_adult側邊欄社群分享下方300600',
+                        'w': '300',
+                        'h': '600'
+                    }
+                },
+                'vo-both-190129-17': { // repleace 4, 5
+                    'tablet': {
+                        'slot': '/16860155/vida_adult_content_728*90_1',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/Vida_Adult_mobile_content_300*250',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'vo-both-190129-18': { // repleace 7
+                    'tablet': {
+                        'slot': '/16860155/vida成人置頂摩天72890',
+                        'w': '728',
+                        'h': '90'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/vida_m_content_RT_300250',
+                        'w': '300',
+                        'h': '250'
+                    }
+                },
+                'all-both-190129-21': {
+                    'tablet': {
+                        'slot': '/16860155/voweb11',
+                        'w': '780',
+                        'h': '439'
+                    },
+                    'mobile': {
+                        'slot': '/16860155/vomweb05',
+                        'w': '345',
+                        'h': '194'
+                    },
+                }
+            }
+        },
+
+        /**
+         * load gpt js
+         * useless, the same code put in head.js
+         */
+        init: function () {
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//www.googletagservices.com/tag/js/gpt.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'googletag-jssdk'));
+
+             var googletag = googletag || {};
+             googletag.cmd = googletag.cmd || [];
+        },
+
+        bind: function (box) {
+            box.find('.dfp').each(function () {
+                var me = $(this);
+                var ta = me.attr('id') || '';
+
+                gee.dfp.push(me, ta);
+
+            }).removeClass('dfp');
+        },
+
+        push: function (box, ta) {
+            if (gee.dfp.map[siteShortName] && gee.dfp.map[siteShortName][ta] && gee.dfp.map[siteShortName][ta][gee.screen]) {
+                var cu = gee.dfp.map[siteShortName][ta][gee.screen];
+
+                box.css({
+                   'width' : cu.w +'px',
+                   'height' : cu.h +'px'
+                }).addClass('dfped');
+
+                googletag.cmd.push(function() {
+
+                    googletag.defineSlot(cu.slot, [cu.w*1, cu.h*1], ta)
+                        .addService(googletag.pubads()
+                            .addEventListener('slotRenderEnded', function(evt) {
+                                if (evt.isEmpty === true) {
+                                    gee.clog('dfp::'+ evt.slot.getSlotId().toString() +' is empty!');
+                                    $('#'+ evt.slot.getSlotElementId().toString()).prev('.ad_small, .ad_small_m').remove().end().remove();
+                                }
+                            }))
+                        // .enableSingleRequest()
+                        .setCollapseEmptyDiv(true, true);
+                        // .setTargeting("Gender", "Male");
+
+                    googletag.enableServices();
+                    googletag.display(ta);
+                });
+            }
+        },
+
+        set: function (idx, val) {
+            gee.dfp.map[siteShortName][idx] = val;
+        }
+    };
+
+    // <div class="gee" data-gene="init:dfp.get" id="div-gpt-ad-1450338187076-0"></div>
+    gee.hook('dfp.get', function (me) {
+        var ta = me.attr('id') || '';
+        gee.dfp.push(me, ta);
+    });
+
+    $( document ).ready( function() {
+        gee.screen = ($('body').width() < 600) ? 'mobile' : 'tablet';
+
+        if ($('.entry-content').length > 0) {
+            var styleStr = 'border: 1px solid #666666; margin: 0 '+ ($('.entry-content').width() - (($('body').width() < 600) ? 300 : 728))/2 +'px 2.35em;';
+            var clsName = 'ad_small'+ (gee.screen === 'mobile' ? '_m' : '');
+
+            if (containSex === 'No') {
+                if (showAD !== 'No') {
+                    $('.entry-content p').eq(6).after("<div class='"+ clsName +"'>廣告</div><div class='dfp adNoSex' style='"+ styleStr +"' id='all-both-190129-4'></div>");
+                    $('.entry-content p').eq(9).after("<div class='"+ clsName +"'>廣告</div><div class='dfp adNoSex' style='"+ styleStr +"' id='all-both-190129-5'></div>");
+                }
+
+            }
+            else {
+                if (showAD !== 'No') {
+                    $('.entry-content p').eq(7).after("<div class='"+ clsName +"'>廣告</div><div class='dfp ad"+ containSex +"Sex' style='"+ styleStr +"' id='vo-both-190129-17'></div>");
+                }
+
+                $('#all-both-190129-7').attr('id', 'vo-both-190129-18');
+                $('#all-300x250-190129-1').attr('id', 'vo-300x250-190129-15');
+                $('#all-300x600-190129-3').attr('id', 'vo-300x600-190129-16');
+            }
+        }
+
+        // gee.dfp.init(); // useless, gpt.js added on header
+        gee.dfp.bind($('#page'));
+    });
+
+}(gee, jQuery));

@@ -1,0 +1,34 @@
+// AdserverX
+var adxTag = window.adxTag || {};
+adxTag.cmd = adxTag.cmd || [];
+adxTag.data = adxTag.data || {};
+
+window.googletag = window.googletag || {};
+window.googletag.cmd = window.googletag.cmd || [];
+
+(function () {
+    adxTag.data.zones = adxTag.data.zones || {};
+    adxTag.data.zones["HhCiH9Oc"] = {
+        bidObjId: "",
+        creative: "\"<script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().definePassback('/108346865/HK01_Website_top_970x90_or_728x90', [[970, 250], [320, 50], [468, 60], [970, 90], [320, 100], [728, 90]]).display();<\\\/script>\""
+    }
+    adxTag.data.zones["HhCiHIOc"] = {
+        bidObjId: "",
+        creative: "\"<script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().definePassback('/108346865/HK01_Website_top_970x90_or_728x90', [970, 250]).display();<\\\/script>\""
+    }
+    adxTag.data.zones["HhCiHzOc"] = {
+        bidObjId: "",
+        creative: "\"<script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().definePassback('/108346865/HK01_Website_top_970x90_or_728x90', [728, 90]).display();<\\\/script>\""
+    }
+    adxTag.data.zones["HhCiWIOc"] = {
+        bidObjId: "",
+        creative: "\"<script async src=\\\"https://securepubads.g.doubleclick.net/tag/js/gpt.js\\\"><\\\/script><div id=\\\"gpt-passback\\\">  <script>    window.googletag = window.googletag || {cmd: []};    googletag.cmd.push(function() {    googletag.defineSlot('/108346865/HK01_Article_300x250_1', [300, 250], 'gpt-passback').addService(googletag.pubads());    googletag.enableServices();    googletag.display('gpt-passback');    });  <\\\/script><\\\/div>\""
+    }
+    adxTag.data.zones["HhCiWFOc"] = {
+        bidObjId: "",
+        creative: "\"<script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().definePassback('/108346865/HK01_Website_top_970x90_or_728x90', [[970, 250], [320, 50], [468, 60], [970, 90], [320, 100], [728, 90]]).display();<\\\/script>\""
+    }
+    window.googletag.cmd.push(function () {
+        var pubads = window.googletag.pubads();
+    })
+})();
